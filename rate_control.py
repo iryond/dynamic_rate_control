@@ -7,10 +7,10 @@ json_text='{"InstanceStates": [{"InstanceId": "i-xxxxxxxx","ReasonCode": "N/A","
 
 #### pre
 TARGET_STATE = "InService"
-
-#### main
 ssm = boto3.client('ssm')
 ec2 = boto3.client('ec2')
+
+#### main
 InstanceStates = json.loads(json_text)
 Instances = InstanceStates['InstanceStates']
 count = len(Instances)
